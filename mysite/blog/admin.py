@@ -1,4 +1,4 @@
-#django自带图形化数据库管理界面，该应用的后台管理系统配置
+#django自带图形化管理界面，该应用的后台管理系统配置
 from django.contrib import admin
 from .models import BlogArticles  #将BlogArticles类引入到当前环境
 

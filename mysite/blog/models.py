@@ -3,7 +3,8 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 # Create your models here.
-#数据模型模块：使用ORM框架，类似于MVC结构中的Models
+#数据模型类：使用ORM框架，类似于MVC结构中的Models
+#Django中的所有数据模型类都继承自django.db.models.Model类
 #通常一个Model对应数据库的一张数据表，以类的形式表现，包含一些基本(属性)字段以及数据的一些行为
 #ORM实现了对象和数据库之间的映射，隐藏了数据访问的细节，不需要编写SQL语句
 
