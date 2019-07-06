@@ -1,0 +1,28 @@
+{% load staticfiles %}  <!--声明引入静态文件的标签-->
+<!-- 主体内容：导航栏 -->
+<div class="container">  <!--div:在文档中定义一块区域，即包含框、容器 -->
+    <nav class="navbar navder-default" role="navigation"> <!--nav：表示页面中的导航部分 -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.itdiffer.com"><img src="{% static '/images/logo.png' %}" width="100px"></a> <!--第一句的声明后方可使用-->
+        </div>
+        <div>
+            <ul class="navbar-nav" role="navigation"> <!-- ul:没有排序的列表 -->
+                <li><a href="{% url 'blog:blog_title' %}">BLOG</a></li>  <!--li:每条列表项 -->
+            </ul>
+            <!--
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{% url 'account:user_login' %}">LOGIN</a></li>
+            </ul>
+            -->
+            <ul class="nav navbar-nav navbar-right" style="margin-right:10px">
+                <!--判断用户是否登录：-->
+                {%if user.is_authenticated %}
+                <li><a href="#">{{ user.username }}</a></li>
+                <li><a href="{% url 'account:user_logout' %}">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'account:user_login' %}">LOGIN</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+</div>
