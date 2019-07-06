@@ -1,6 +1,6 @@
-from django.db import models
+from django.db import models #总
 from django.utils import timezone
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User #Django默认的用户数据模型，即auth_user
 
 # Create your models here.
 #数据模型类：使用ORM框架，类似于MVC结构中的Models
