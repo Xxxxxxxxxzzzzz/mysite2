@@ -12,7 +12,12 @@
     {% endif %}
 
     <p>Input your username and password</p>
-    <form class="form-horizontal" action="{% url 'account:user_login' %}" method="post">{% csrf_token %}
+    {% if next %}  <!--登录后跳转修改密码页面-->
+    <form class="form-horizontal" action="{% url 'account:user_login' %}next={{next}}" method="post"><!--登录后跳转修改密码页面-->
+        {% else %}
+        <form class="form-horizontal" action="{% url 'account:user_login' %}" method="post"> <!--登录后跳转修改密码页面-->
+            {% endif %} <!--登录后跳转修改密码页面-->
+             {% csrf_token %}
     <!--{{ form.as_p}}-->
         <div class="form-group">
             <label for="{{ form.username.id_for_label }}" class="col-md-5 control-label" style="color:red"><span class="glyphicon glyphicon-user"></span>Username</label><div class="col-md-6 text-left">{{ form.username }}</div>
