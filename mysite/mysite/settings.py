@@ -125,4 +125,5 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
 )
 
-LOGIN_REDIRECT_URL = '/blog/'
+LOGIN_REDIRECT_URL = '/blog/' #内置登录。P60
+LOGIN_URL ='/account/login/' #未登录自动跳转至登录页面。P77
